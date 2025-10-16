@@ -3560,6 +3560,8 @@ body {
     cursor: default;
 }
 #cakeModalOrder{
+    max-height: 46px;
+    min-height: 46px;
     max-width: 100%;
     width: 100%;
     font-size: 18px;
