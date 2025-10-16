@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LadyM - Premium Mille Crêpes Cakes | Handcrafted French Pastries</title>
+    <meta name="description" content="Discover LadyM's exquisite collection of handcrafted Mille Crêpes cakes. From our signature creations to seasonal specialties, experience the finest French pastry artistry." />
+    <meta name="keywords" content="LadyM, Mille Crepes, French pastries, cakes, desserts, birthday cakes, luxury cakes" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ladym.com/" />
+    <meta property="og:title" content="LadyM - Premium Mille Crêpes Cakes" />
+    <meta property="og:description" content="Discover LadyM's exquisite collection of handcrafted Mille Crêpes cakes." />
+    <meta property="og:image" content="https://ladym.com/img/welcome.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ladym.com/" />
+    <meta property="twitter:title" content="LadyM - Premium Mille Crêpes Cakes" />
+    <meta property="twitter:description" content="Discover LadyM's exquisite collection of handcrafted Mille Crêpes cakes." />
+    <meta property="twitter:image" content="https://ladym.com/img/welcome.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+    <link rel="apple-touch-icon" href="img/logo.svg" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- EmailJS for sending verification codes -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/mobile-fixes.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+
+                <nav class="nav">
+
+                    <a href="index.html" class="header__logo" aria-label="LadyM Home">
+                        <img src="img/logo.svg" alt="LadyM Logo" width="50" height="44" loading="eager">
+                    </a>
+
+                    <div class="header__btns">
+                        <div class="header__btn-group" id="headerBtnGroup">
+                        <div class="header__search-container">
+                            <button type="button" class="header__btn" id="searchBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            </button>
+                            <div class="header__search-wrapper" id="searchWrapper">
+                                <div class="header__search-wrapper-inner">
+                                    <img src="img/icons/search.svg" alt="Search" class="header__search-icon" />
+                                    <!-- <div class="header__search-divider"></div> -->
+                                    <input type="text" id="cakeSearch" class="header__search-input" placeholder="Search" autocomplete="off" />
+                                    <button type="button" class="header__search-close" id="searchCloseBtn">
+                                        <img src="img/icons/CloseIcon.svg" alt="Close" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <button type="button" class="header__btn header__cart-btn" id="cartBtn" aria-label="Shopping cart">
+                                <img src="img/icons/cart.svg" alt="Shopping cart icon" width="20" height="20" loading="eager" />
+                                <span class="cart-count" id="cartCount" aria-label="Items in cart">0</span>
+                            </button>
+                            <button type="button" class="header__btn header__profile-btn" id="profileBtn" aria-label="User account">
+                                <img src="img/icons/profile.svg" alt="User profile icon" width="20" height="20" loading="eager" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="header__hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="header__hamburger-line"></span>
+                        <span class="header__hamburger-line"></span>
+                        <span class="header__hamburger-line"></span>
+                    </button>
+
+                    <ul class="header__menu" id="headerMenu">
+                        <!-- Mobile search (visible only at 319px and below) -->
+                        <li class="header__menu-item header__menu-item--search-mobile">
+                            <div class="header__menu-search">
+                                <img src="img/icons/search.svg" alt="Search icon" class="header__menu-search-icon" width="16" height="16" loading="eager" />
+                                <input type="text" id="mobileMenuSearch" class="header__menu-search-input" placeholder="Search cakes..." autocomplete="off" aria-label="Search cakes" />
+                            </div>
+                        </li>
+                        
+                        <li class="header__menu-item"><a href="#" class="header__menu-link">Order</a></li>
+                        <li class="header__menu-item"><a href="#" class="header__menu-link">Cakes</a></li>
+                        <li class="header__menu-item"><a href="#" class="header__menu-link">Gifts</a></li>
+                        <li class="header__menu-item"><a href="#" class="header__menu-link">Boutiques</a></li>
+                        <li class="header__menu-item"><a href="#" class="header__menu-link">About</a></li>
+                        <li class="header__menu-item"><a href="#" class="header__menu-link">Rewards</a></li>
+                        
+                        <!-- Mobile-only buttons in menu (visible only at 425px and below) -->
+                        <li class="header__menu-item header__menu-item--mobile-only">
+                            <button type="button" class="header__menu-btn header__menu-cart-btn" id="mobileCartBtn" aria-label="Shopping cart">
+                                <img src="img/icons/cart.svg" alt="Shopping cart icon" width="20" height="20" loading="eager" />
+                                <span>Cart</span>
+                                <span class="cart-count cart-count--menu" id="mobileCartCount" aria-label="Items in cart">0</span>
+                            </button>
+                        </li>
+                        <li class="header__menu-item header__menu-item--mobile-only">
+                            <button type="button" class="header__menu-btn header__menu-profile-btn" id="mobileProfileBtn" aria-label="User account">
+                                <img src="img/icons/profile.svg" alt="User profile icon" width="20" height="20" loading="eager" />
+                                <span>Account</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="header__mobile-overlay" id="mobileOverlay"></div>
+                </nav>
+
+            </div>
+        </header>
+        <main class="main">
+            <section class="welcome">
+                <div class="container">
+                    <!-- Swiper -->
+                    <div class="swiper welcomeSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides will be dynamically added by JavaScript -->
+                        </div>
+                        <!-- Navigation buttons -->
+                        <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> -->
+                    </div>
+                </div>
+                <!-- Pagination outside slider -->
+                <div class="welcome__pagination-wrapper">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <section class="types fix-padding">
+                <div class="container">
+                    <div class="types__items">
+                        <div class="types__item type1">
+                            <h3 class="types__title">Birthday Cakes</h3>
+                        </div>
+                        <div class="types__item type2">
+                            <h3 class="types__title">New & Seasonal</h3>
+                        </div>
+                        <div class="types__item type3">
+                            <h3 class="types__title types__title--special-color">Lady M x Oishii</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cakes fix-padding">
+                <div class="container">
+                    <div class="cakes__header">
+                        <h2 class="cakes__title" id="cakesTitle">Cakes</h2>
+                        <nav class="cakes__nav">
+                            <button type="button" class="cakes__nav-btn cakes__nav-btn--active" data-category="all">Shop All</button>
+                            <button type="button" class="cakes__nav-btn" data-category="new">New & Seasonal</button>
+                            <button type="button" class="cakes__nav-btn" data-category="gluten">Gluten-Free</button>
+                            <button type="button" class="cakes__nav-btn" data-category="best">Best Sellers</button>
+                            <button type="button" class="cakes__nav-btn" data-category="birthday">Birthday</button>
+                            <button type="button" class="cakes__nav-btn" data-category="anniversary">Anniversary</button>
+                            <button type="button" class="cakes__nav-btn" data-category="graduation">Graduation</button>
+                        </nav>
+                    </div>
+                    
+                    <div class="cakes__cards">
+                        <div class="cakes__card" data-cake-name="Dubai Chocolate Mille - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake1.jpg);" data-hover="cake1-hover.webp">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                                <div class="cakes__badge cakes__badge--best-seller cakes__badge--secondary">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Best Seller</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Dubai Chocolate Mille - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">150$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Amedei Chocolate Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake2.jpg);" data-hover="cake2-hover.webp">
+                                <div class="cakes__badge cakes__badge--best-seller">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Best Seller</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Amedei Chocolate Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">125$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Signature Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake3.jpg);" data-hover="cake3-hover.webp">
+                                <div class="cakes__badge cakes__badge--best-seller">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Best Seller</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Signature Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">115$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Signature Mille Crêpes - 6 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake4.png);" data-hover="cake4-hover.png"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Signature Mille Crêpes - 6 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">70$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Checkers - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake5.jpg);" data-hover="cake5-hover.png"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Checkers - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">115$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Strawberry Shortcake - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake6.jpg);" data-hover="cake6-hover.png"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Strawberry Shortcake - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">100$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Purple Yam Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake7.png);" data-hover="cake7-hover.webp">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Purple Yam Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">125$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Tiramisu Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake8.jpg);" data-hover="cake8-hover.png"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Tiramisu Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">115$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Coconut Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake9.jpg);" data-hover="cake9-hover.png">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Coconut Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">115$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Peach Melba Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake10.jpg);" data-hover="cake10-hover.webp">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Peach Melba Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">125$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Couronne du Chocolat - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake11.jpg);" data-hover="cake11-hover.png"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Couronne du Chocolat - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">102$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cakes__card" data-cake-name="Dassai Blue Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake12.jpg);" data-hover="cake12-hover.png">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                                <div class="cakes__badge cakes__badge--best-seller cakes__badge--secondary">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Best Seller</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Dassai Blue Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">135$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="cakes__card" data-cake-name="Slice of the Best: Passion Collection - 9 inches">
+                            <div class="cakes__img" style="background-image: url(./img/cake13.png);" data-hover="cake13-hover.png">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                                <div class="cakes__badge cakes__badge--best-seller cakes__badge--secondary">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Best Seller</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Slice of the Best: Passion Collection - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">132$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cakes__card" data-cake-name="Pink Pearl Mille Crêpes - 9 inches">
+                            <div class="cakes__img" style="background-image: url(./img/cake14.png);" data-hover="cake14-hover.png">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Pink Pearl Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">125$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cakes__card" data-cake-name="Taro Mochi Cream Cake - 9 inches">
+                            <div class="cakes__img" style="background-image: url(./img/cake15.png);" data-hover="cake15-hover.png">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Taro Mochi Cream Cake - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">115$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cakes__card" data-cake-name="Green Tea Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake16.jpg);" data-hover="cake16-hover.webp"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Green Tea Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">115$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="cakes__card" data-cake-name="Green Tea Mille Crêpes - 6 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake17.png);" data-hover="cake17-hover.png"></div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Green Tea Mille Crêpes - 6 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">70$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                         <div class="cakes__card" data-cake-name="Gluten-Free Green Tea Mille Crêpes - 9 inches">
+
+                            <div class="cakes__img" style="background-image: url(./img/cake16.jpg);" data-hover="cake16-hover.webp">
+                                <div class="cakes__badge cakes__badge--new">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">New</span>
+                                </div>
+                                <div class="cakes__badge cakes__badge--gluten-free cakes__badge--secondary">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Gluten Free</span>
+                                </div>
+                                <div class="cakes__badge cakes__badge--best-seller cakes__badge--tertiary">
+                                    <svg class="cakes__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="cakes__badge-text">Best Seller</span>
+                                </div>
+                            </div>
+
+                            <div class="cakes__info">
+                                <h3 class="cakes__name">Gluten-Free Green Tea Mille Crêpes - 9 inches</h3>
+                                <div class="cakes__btn">
+                                    <button type="button" class="cakes__btn--price btn">160$</button>
+                                    <button type="button" class="cakes__btn--order btn">Add to cart</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content-wrapper">
+                    <div class="footer__main">
+                        <div class="footer__sign-up">
+                            <h2 class="footer__title">Sign Up for Our Newsletter</h2>
+                            <p class="footer__subtitle">Be the first to know about new and limited edition cakes and bon bons.</p>
+                            <form class="footer__form" id="newsletterForm">
+                                <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                                <input 
+                                    class="footer__input" 
+                                    type="email" 
+                                    id="newsletter-email"
+                                    name="email"
+                                    placeholder="Enter Address" 
+                                    required
+                                    aria-label="Email address for newsletter"
+                                    autocomplete="email"
+                                >
+                                <button class="footer__input-btn" type="submit">SUBMIT</button>
+                            </form>
+                            <ul class="footer__socials" role="list">
+                                <li><a href="https://www.instagram.com/ladymcakes" class="socials__link" aria-label="Visit our Instagram page" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                                </a></li>
+                                <li><a href="https://www.facebook.com/ladymcakes" class="socials__link" aria-label="Visit our Facebook page" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                                </a></li>
+                                <li><a href="https://www.pinterest.com/ladymcakes" class="socials__link" aria-label="Visit our Pinterest page" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+                                </a></li>
+                                <li><a href="https://www.youtube.com/ladymcakes" class="socials__link" aria-label="Visit our YouTube channel" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                                </a></li>
+                                <li><a href="https://www.tiktok.com/@ladymcakes" class="socials__link" aria-label="Visit our TikTok page" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer__links">
+                            <nav class="footer__link" aria-label="Support links">
+                                <h3 class="footer__link-title">SUPPORT</h3>
+                                <ul class="footer__menu" role="list">
+                                    <li class="footer-menu__item"><a href="/faq" class="footer-menu__link">FAQ</a></li>
+                                    <li class="footer-menu__item"><a href="/contact" class="footer-menu__link">Contact Us</a></li>
+                                    <li class="footer-menu__item"><a href="/boutiques" class="footer-menu__link">Boutiques</a></li>
+                                    <li class="footer-menu__item"><a href="/accessibility" class="footer-menu__link">Accessibility</a></li>
+                                    <li class="footer-menu__item"><a href="/sitemap" class="footer-menu__link">Sitemap</a></li>
+                                </ul>
+                            </nav>
+
+                            <nav class="footer__link" aria-label="About links">
+                                <h3 class="footer__link-title">ABOUT</h3>
+                                <ul class="footer__menu" role="list">
+                                    <li class="footer-menu__item"><a href="/licensing" class="footer-menu__link">Licensing</a></li>
+                                    <li class="footer-menu__item"><a href="/terms" class="footer-menu__link">Terms & Conditions</a></li>
+                                    <li class="footer-menu__item"><a href="/privacy" class="footer-menu__link">Privacy Policy</a></li>
+                                </ul>
+                            </nav>
+
+                            <nav class="footer__link" aria-label="Company links">
+                                <h3 class="footer__link-title">COMPANY</h3>
+                                <ul class="footer__menu" role="list">
+                                    <li class="footer-menu__item"><a href="/careers" class="footer-menu__link">Careers</a></li>
+                                    <li class="footer-menu__item"><a href="/donations" class="footer-menu__link">Donations</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <div class="footer__bottom">
+                        <p class="copyright">© 2025 Lady M Confections Co., LTD. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <button class="cart-modal__close" id="cartCloseBtn" title="Close cart">
+            <img src="img/icons/CloseXIcon.svg" alt="Close" />
+        </button>
+        <div class="cart-modal__content">
+            <div class="cart-modal__arrow"></div>
+            <div class="cart-modal__header">
+                <div class="cart-modal__title-wrapper">
+                    <h2 class="cart-modal__title">Cart <span class="cart-modal__count" id="cartModalCount">0</span></h2>
+                    <button class="cart-modal__delete-all" id="deleteAllBtn" title="Delete all items">
+                        <img src="img/icons/trash.svg" alt="Delete all" />
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Delete Confirmation (shown inside cart) -->
+            <div class="delete-confirmation" id="deleteConfirmation">
+                <div class="delete-confirmation__content">
+                    <h3 class="delete-confirmation__title">Delete products</h3>
+                    <p class="delete-confirmation__message">Are you sure you want to delete the selected items? This action cannot be undone.</p>
+                    <button class="delete-confirmation__delete btn" id="deleteConfirmBtn">Delete</button>
+                </div>
+                <button class="delete-confirmation__close" id="deleteCloseBtn" title="Close">
+                    <img src="img/icons/CloseXIcon.svg" alt="Close" />
+                </button>
+            </div>
+            
+            <div id="cartItems" class="cart-modal__items"></div>
+            <p class="cart-modal__empty-message" id="cartEmptyMessage">There's no item in your cart</p>
+            <button class="cart-modal__checkout-btn btn" id="checkoutBtn">Proceeding to checkout (0$)</button>
+            <button class="cart-modal__watch-btn btn" id="watchCakesBtn">Watch Cakes</button>
+        </div>
+    </div>
+
+    <div class="cake-modal-overlay" id="cakeModalOverlay"></div>
+    <div class="cake-modal" id="cakeModal">
+        <button type="button" class="cake-modal__close-btn" id="cakeModalCloseBtn" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="cake-modal__content">
+            <div class="cake-modal__gallery">
+                <div class="swiper mainSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides will be dynamically added by JavaScript -->
+                    </div>
+                </div>
+                <div class="cake-modal__thumbnails-container">
+                    <div class="swiper thumbSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Thumbnail slides will be dynamically added by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="cake-modal__arrows">
+                        <button type="button" class="cake-modal__arrow cake-modal__arrow--prev" id="cakeModalPrev">
+                            <svg viewBox="0 0 7.5 13.5" width="8" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.75,12.75l-6,-6l6,-6" stroke="#7A7A7A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="cake-modal__arrow cake-modal__arrow--next" id="cakeModalNext">
+                            <svg viewBox="0 0 7.5 13.5" width="8" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.75,12.75l6,-6l-6,-6" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cake-modal__info">
+                <div class="cakes-modal__description">
+                <h2 id="cakeModalTitle"></h2>
+                <p id="cakeModalSize" class="cake-modal__size"></p>
+                <p id="cakeModalDesc"></p>
+                <div class="cake-modal__sizes" id="cakeModalSizes"></div>
+                
+                </div>
+                
+                <div class="cake-modal__btns">
+
+                    <div class="cake-modal__quantity">
+                    <button type="button" class="qty-btn" id="qtyMinus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="1" fill="none" viewBox="0 0 12 1">
+                            <path stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="M1.333.5h9.334"/>
+                        </svg>
+                    </button>
+                    <span id="qtyValue">1</span>
+                    <button type="button" class="qty-btn" id="qtyPlus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" fill="none" viewBox="0 0 12 11">
+                            <path stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="M1.333 5.5h9.334M6 .833v9.334"/>
+                        </svg>
+                    </button>
+                    </div>
+                
+
+                    <button type="button" class="btn" id="cakeModalOrder">Add to Cart
+                        <span id="cakeModalPrice" class="cake-modal__price"></span>
+                    </button>
+                    <!-- <button type="button" class="btn" id="cakeModalClose">Close</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/226504a33e.js" crossorigin="anonymous" defer></script>
+    <script src="js/backend-status.js" defer></script>
+    <script src="js/api-client.js" defer></script>
+    <script src="js/google-config.js" defer></script>
+    <script src="js/email-config.js" defer></script>
+    <script src="js/birthday-picker.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
