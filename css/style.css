@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .container {
     max-width: 1370px;
@@ -38,7 +38,9 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    background-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.80);
+    /* glass */
+    backdrop-filter: blur(50px);
     border-bottom: 1px solid #E6E6E6;
     z-index: 999;
 }
@@ -46,7 +48,8 @@ body {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    min-height: 93px;
+    min-height: 86px;
+    box-sizing: border-box;
     gap: 20px;
 }
 .header__logo {
@@ -604,7 +607,7 @@ body {
     
     .header__hamburger {
         width: 20px;
-        height: 16px;
+        height: 18px;
     }
     
     .main {

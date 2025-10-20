@@ -9,13 +9,15 @@
    ============================================ */
 
 @media (max-width: 480px) {
-    /* Prevent horizontal overflow */
+    /* Prevent horizontal overflow but allow vertical scrolling */
     body {
         overflow-x: hidden;
+        overflow-y: auto;
     }
     
     .wrapper {
         overflow-x: hidden;
+        overflow-y: visible;
         width: 100%;
     }
     
@@ -902,12 +904,11 @@
 
 @media (max-width: 480px) {
     .header {
-        overflow-x: hidden;
+        overflow: visible;
     }
     
     .nav {
-        overflow-x: hidden;
-        overflow-y: hidden;
+        overflow: visible;
         max-width: 100%;
     }
     
@@ -930,7 +931,7 @@
     /* Ensure hamburger menu doesn't open automatically */
     .header__menu {
         left: auto !important;
-        right: -100% !important;
+        right: -107% !important;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
         transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -985,7 +986,7 @@
     }
     
     .header__hamburger:not(.active) ~ .header__menu {
-        right: -100% !important;
+        right: -107% !important;
         left: auto !important;
     }
     
