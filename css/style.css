@@ -732,7 +732,7 @@ body {
 .btn {
     padding: 11px 20px;
     border-radius: 100px;
-    background-color: #F0F1FF;
+    background-color: #E5F5FF;
     font-weight: inherit;
     border: none;
     cursor: pointer;
@@ -2247,7 +2247,6 @@ body {
 
 .cart-modal__watch-btn {
     width: 100%;
-    background: #F3F4FF;
     color: #191919;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
